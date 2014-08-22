@@ -14,7 +14,7 @@ var gulp=require('gulp'),
 
 
 gulp.task('default',function(){
-    console.log('elliptical-nodebind build..."tasks: gulp build|gulp minify"');
+    console.log('json-pointer build..."tasks: gulp build|gulp minify"');
 });
 
 gulp.task('build',function(){
