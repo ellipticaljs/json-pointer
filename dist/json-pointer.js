@@ -52,7 +52,8 @@
         define(['foreach'], factory);
     } else {
         // Browser globals (root is window)
-        root.returnExports = factory(root._utils.forEach);
+        root._utils.jsonPointer=factory(root._utils.forEach);
+        root.returnExports = root._utils.jsonPointer;
     }
 }(this, function (forEach) {
 
