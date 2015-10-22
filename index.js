@@ -1,3 +1,4 @@
+
 (function (root, factory) {
     if (typeof module !== 'undefined' && module.exports) {
         //commonjs
@@ -136,9 +137,9 @@
         var refTokens = [];
 
         descend = descend || function (value) {
-            var type = Object.prototype.toString.call(value);
-            return type === '[object Object]' || type === '[object Array]';
-        };
+                var type = Object.prototype.toString.call(value);
+                return type === '[object Object]' || type === '[object Array]';
+            };
 
         (function next (cur) {
             each(cur, function (value, key) {
@@ -216,12 +217,3 @@
 
 
 }));
-
-
-
-
-
-
-
-
-

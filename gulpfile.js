@@ -1,54 +1,34 @@
 var gulp=require('gulp'),
-    gulputil=require('gulp-util'),
-    path=require('path'),
-    fs = require('fs-extra'),
     concat=require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    merge = require('merge-stream'),
-    build=require('./build.json'),
-    release=require('./build/dist.json'),
-    src='./src',
-    dist='./dist';
-
+    BUILD_JSON=require('./build/dist.json'),
+    BUILD_NAME='json-pointer.js',
+    MIN_NAME='json-pointer.min.js',
+    REPO_NAME='json-pointer',
+    DIST='./dist';
 
 
 
 gulp.task('default',function(){
-    console.log('json-pointer build..."tasks: gulp build|gulp minify"');
+    console.log(REPO_NAME + ' ..."tasks: gulp build|gulp minify"');
 });
 
 gulp.task('build',function(){
-
-    var build_=platformStream()
-        .pipe(concat('json-pointer.js'))
-        .pipe(gulp.dest(src));
-
-    var release_=releaseStream()
-        .pipe(concat('json-pointer.js'))
-        .pipe(gulp.dest(dist));
-
-    return merge(build_, release_);
-
+    concatStream(BUILD_NAME)
+        .pipe(gulp.dest(DIST));
 });
 
 gulp.task('minify',function(){
-
-    var build_=platformStream()
-        .pipe(concat('json-pointer.js'))
-        .pipe(gulp.dest(src));
-
-    var minify_=releaseStream()
-        .pipe(concat('json-pointer.min.js'))
+    concatStream(MIN_NAME)
         .pipe(uglify())
-        .pipe(gulp.dest(dist));
-
-    return merge(build_, minify_);
+        .pipe(gulp.dest(DIST));
 });
 
-function platformStream(){
-    return gulp.src(build);
+function srcStream(){
+    return gulp.src(BUILD_JSON);
 }
 
-function releaseStream(){
-    return gulp.src(release);
+function concatStream(name){
+    return srcStream()
+        .pipe(concat(name))
 }
