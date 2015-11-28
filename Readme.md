@@ -1,9 +1,5 @@
 # json-pointer
 
-# NOTICE
-
-This repo is now deprecated. The project has moved to https://github.com/ellipticaljs/json-pointer
-
 
 [![Build Status](https://travis-ci.org/manuelstofer/json-pointer.png)](https://travis-ci.org/manuelstofer/json-pointer)
 

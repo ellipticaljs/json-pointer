@@ -1,7 +1,7 @@
 {
   "name": "json-pointer",
   "description": "Some utilities for JSON pointers described by RFC 6901",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "Manuel Stofer <manuel@takimata.ch>",
   "contributors": [
         {
@@ -10,12 +10,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "foreach": "git+https://github.com/tachyon1337/foreach.git"
+    "foreach": "git+https://github.com/ellipticaljs/foreach.git"
   },
-  "homepage": "https://github.com/manuelstofer/json-pointer",
+  "homepage": "https://github.com/ellipticaljs/json-pointer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tachyon1337/json-pointer.git"
+    "url": "https://github.com/ellipticaljs/json-pointer.git"
   },
   "devDependencies": {
     "mocha": "^1.9.0",
